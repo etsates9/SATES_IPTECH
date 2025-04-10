@@ -2,32 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple HTML Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive HTML Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f0f8ff;
+      background-image: url('https://www.w3schools.com/w3images/forest.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
       text-align: center;
       padding: 50px;
+      margin: 0;
     }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+
     button {
-      padding: 10px 20px;
+      padding: 15px 30px;
       background-color: #007bff;
       border: none;
       color: white;
-      border-radius: 5px;
+      font-size: 1.2em;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
     }
+
     button:hover {
       background-color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    button:focus {
+      outline: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to My Simple Page</h1>
-  <p>This is a paragraph of text on a simple HTML page.</p>
-  <button onclick="alert('You clicked the button!')">Click Me</button>
+  <h1>Welcome to My Interactive Page</h1>
+  <p>Click the button below to change the background color!</p>
+  <button onclick="changeBackgroundColor()">Click Me</button>
+
+  <script>
+    function changeBackgroundColor() {
+      const colors = ['#f0f8ff', '#ffebcd', '#98fb98', '#ffcccb', '#add8e6'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+  </script>
 
 </body>
 </html>
